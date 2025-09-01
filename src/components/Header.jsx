@@ -74,26 +74,35 @@ const Header = () => {
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="lg:hidden text-white cursor-pointer"
                     >
-                        {isMenuOpen ? <img src={closeLogo} alt='close' width={24} height={24} /> : <img src={menuLogo} alt='menu' width={24} height={24} />}
+                        <svg className="w-10 h-10 text-[#08B4DA] border-[1px] border-[#08B4DA] text-xl hover:bg-[#08B4DA] hover:text-white rounded" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h10" />
+                        </svg>
                     </button>
                 </div>
 
-                {isMenuOpen && (
-                    <div className="lg:hidden bg-gray-500 backdrop-blur-md rounded-lg mt-2 py-4">
-                        <nav className="flex flex-col space-y-2 px-4">
-                            {['Product', 'Pricing', 'Resource', 'Company'].map((item) => (
-                                <button
-                                    key={item}
-                                    onClick={() => scrollToSection(item.toLowerCase())}
-                                    className="text-gray-300 hover:text-blue-400 transition-colors duration-200 font-medium text-left py-2 cursor-pointer"
-                                >
-                                    {item}
-                                </button>
-                            ))}
+                <div
+                    className={`fixed top-0 left-0 h-[100vh] w-72 bg-white shadow-md transform transition-transform duration-300 z-40 ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
+                        }`}
+                >
+                    <div className="flex flex-col p-4 space-y-6">
+                        <div className="text-2xl  flex items-center justify-between">
 
-                        </nav>
+                            <img src={mainLogo} alt="LeadCRM" title='LeadCRM' width={120} height={42} />
+                            <button
+                                onClick={() => setIsMenuOpen(false)}
+                                className="self-end border rounded-md px-2 py-1 cursor-pointer text-sm"
+                            >
+                                ✕
+                            </button>
+                        </div>
+                        <a href="#" className="font-semibold">Product</a>
+                        <a href="#" className="font-semibold">Pricing</a>
+                        <a href="#" className="font-semibold">Resources</a>
+                        <a href="#" className="font-semibold">Company</a>
                     </div>
-                )}
+                </div>
+
+
             </div>
         </header>
     )

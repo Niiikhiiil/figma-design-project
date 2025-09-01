@@ -7,6 +7,7 @@ import MailIcon from "../assets/mail.svg";
 import PhoneIcon from "../assets/phone.svg";
 import HelpIcon from "../assets/help.svg";
 import LogoIcon from "../assets/logo.svg";
+import ChromeIcon from "../assets/chrome.svg";
 
 const Footer = () => {
     return (
@@ -77,7 +78,17 @@ const Footer = () => {
                             <img src={HelpIcon} alt="help" className="w-5 h-5" />
                             Help Center
                         </li>
+                        <div className='flex items-center bg-[#373737] py-2.5 px-4 rounded-3xl justify-end gap-2 text-white  w-fit ml-auto mr-4' >
+                            <div className='flex-1 flex-col items-start'>
+                                <div className='font-medium'>Availble In</div>
+                                <div className='text-nowrap'>Chrome</div>
+                            </div>
+                            <div className='bg-white rounded-full flex items-center justify-center w-10 h-10'>
+                                <img src={ChromeIcon} alt='Chrome' />
+                            </div>
+                        </div>
                     </ul>
+
                 </div>
             </div>
 

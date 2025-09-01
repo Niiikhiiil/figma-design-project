@@ -24,11 +24,11 @@ const ReviewData = [
 const Review = () => {
     return (
         <section className="relative z-10 flex items-center py-5 mb-[6rem]" >
-            <img src={BallIcon} alt="Ball" className='absolute -top-[35px] right-1' />
+            <img src={BallIcon} alt="Ball" className='absolute hidden lg:block lg:-top-[35px] lg:right-1' />
             <div className='flex items-center justify-center w-full basis-auto max-w-[1300px] mx-auto my-0 py-5 flex-col'>
                 <div className="w-full flex items-center md:items-start gap-3 flex-col mt-5 lg:mt-10">
                     <div className='flex items-center mb-5'>
-                        <h1 className='font-semibold text-2xl lg:text-4xl text-[#090F4E]'>What people are saying about LeadCRM</h1>
+                        <h1 className='font-semibold text-2xl md:text-3xl lg:text-4xl leading-snug text-[#090F4E]'>What people are saying about LeadCRM</h1>
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4 lg:p-0'>
                         {

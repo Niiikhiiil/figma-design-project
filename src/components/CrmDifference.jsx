@@ -78,100 +78,120 @@ const Data = [
 
 const CrmDifference = () => {
     return (
-        <div className='flex items-center min-h-screen justify-center flex-col mt-15 pb-15'>
-
-            {/* Header  */}
-            <div className='mb-10'>
-                <h1 className='font-semibold text-4xl'>Every LinkedIn Prospector faces these daily challenges</h1>
+        <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12">
+            {/* Header */}
+            <div className="mb-10 text-center max-w-3xl">
+                <h1 className="font-semibold text-2xl md:text-3xl lg:text-4xl leading-snug">
+                    Every LinkedIn Prospector faces these daily challenges
+                </h1>
             </div>
 
-            {/* CRM difference cards  */}
-            <div className='flex items-center justify-center gap-5 mt-5 flex-col md:flex-row mb-10'>
-                <div className='flex items-center flex-col rounded-3xl p-3 w-full md:w-[30%]  lg:min-h-[80vh] hover:border-[1px] hover:w-[calc(100% - 2px)] hover:-translate-y-1 transform-all duration-200' style={{ backgroundColor: Data[0].bgColor, borderColor: "#FF4C51" }}>
-                    <div className='p-3'>
+            {/* CRM difference cards */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 w-full">
+                {/* Card 1 */}
+                <div
+                    className="flex flex-col items-center rounded-3xl p-5 w-full md:w-1/2 lg:w-[30%] min-h-[60vh] lg:min-h-[80vh] transition-all duration-300 hover:border hover:-translate-y-2"
+                    style={{ backgroundColor: Data[0].bgColor, borderColor: "#FF4C51" }}
+                >
+                    <div className="p-3 w-full">
+                        <img src={Data[0]?.image} alt={Data[0]?.title} className="mx-auto" />
+                        <h1 className="text-[#D24B68] font-semibold text-2xl mt-6 mb-4 text-center md:text-left">
+                            {Data[0]?.title}
+                        </h1>
+
                         <div>
-                            <img src={Data[0]?.image} />
-                        </div>
-                        <h1 className='text-[#D24B68] font-semibold text-2xl my-4'>{Data[0]?.title}</h1>
-                        <div>
-                            {
-                                Data[0].details.map((det, index) => (
-                                    <div className='flex items-center justify-between gap-5 leading-relaxed my-3' key={index}>
-                                        <div className='flex items-center justify-center'>
-                                            <img src={CrossIcon} alt='cons' width={24} height={24} />
+                            {Data[0].details.map((det, index) => (
+                                <div
+                                    className="flex gap-5 my-4"
+                                    key={index}
+                                >
+                                    <img src={CrossIcon} alt="cons" width={24} height={24} />
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <h2 className="font-semibold text-lg">{det?.title}</h2>
+                                            <span className="bg-[#FFDCD4] rounded-full text-sm px-2 py-1 text-[#FF4C51] font-medium">
+                                                {det?.cons}
+                                            </span>
                                         </div>
-                                        <div className='flex-1 flex-col'>
-                                            <div className='flex flex-row items-center gap-2 justify-start mb-2'>
-                                                <div>
-                                                    <h2 className='font-semibold text-xl'>{det?.title}</h2>
-                                                </div>
-                                                <div className='bg-[#FFDCD4] rounded-full text-sm px-2 py-1 text-[#FF4C51] font-medium'> {det?.cons}</div>
-                                            </div>
-                                            <div className='font-[400] text-lg'>
-                                                <p>{det?.subText}</p>
-                                            </div>
-                                        </div>
+                                        <p className="text-gray-700 text-base">{det?.subText}</p>
                                     </div>
-                                ))
-                            }
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
+
+                {/* VS Divider */}
                 <div className="hidden md:flex flex-col items-center justify-center min-h-[70vh]">
-                    <div className="flex-2 w-px bg-gray-400"></div>
-
+                    <div className="flex-1 w-px bg-gray-300"></div>
                     <div className="my-4 font-semibold text-2xl">VS</div>
-
-                    <div className="flex-2 w-px bg-gray-400"></div>
+                    <div className="flex-1 w-px bg-gray-300"></div>
                 </div>
 
-                <div className='flex items-center flex-col rounded-3xl p-3 py-4 w-full md:w-[30%]  lg:min-h-[80vh] hover:border-[1px] hover:w-[calc(100% - 2px)] hover:-translate-y-1 transform-all duration-200' style={{ backgroundColor: Data[1].bgColor, boxShadow: Data[1]?.shadow && " 0px 8px 24px 0px #959DA533" }}>
-                    <div className='p-3'>
-                        <div>
-                            <img src={Data[1]?.image} />
+                {/* Card 2 */}
+                <div
+                    className="flex flex-col items-center rounded-3xl p-5 w-full md:w-1/2 lg:w-[30%] min-h-[60vh] lg:min-h-[80vh] transition-all duration-300 hover:border hover:-translate-y-2"
+                    style={{
+                        backgroundColor: Data[1].bgColor,
+                        boxShadow: Data[1]?.shadow && "0px 8px 24px 0px #959DA533",
+                    }}
+                >
+                    <div className="p-3 w-full">
+                        <img src={Data[1]?.image} alt={Data[1]?.title} className="mx-auto" />
+                        <div className="flex items-center gap-2 my-6">
+                            <h1 className="text-[#D24B68] font-semibold text-2xl">
+                                {Data[1]?.title}
+                            </h1>
+                            <img src={Data[1]?.smallIcon} width={20} height={20} alt="icon" />
+                            <span className="bg-[#E6FFF1] rounded-full text-sm px-2 py-1 text-[#097737] font-medium">
+                                {Data[1]?.subText}
+                            </span>
                         </div>
-                        <div className='flex items-center justify-start gap-1'>
-                            <h1 className='text-[#D24B68] font-semibold text-2xl my-4'>{Data[1]?.title}</h1>
-                            <img src={Data[1]?.smallIcon} width={20} height={20} />
-                            <div className='bg-[#E6FFF1] rounded-full text-sm px-2 py-1 text-[#097737] font-medium'> {Data[1]?.subText}</div>
-                        </div>
+
                         <div>
-                            {
-                                Data[1].details.map((det, index) => (
-                                    <div className='flex items-center justify-between gap-5 leading-relaxed my-3' key={index}>
-                                        <div className='flex items-center justify-center'>
-                                            <img src={det?.icon} alt='cons' width={36} height={36} />
+                            {Data[1].details.map((det, index) => (
+                                <div
+                                    className="flex gap-5 my-4"
+                                    key={index}
+                                >
+                                    <img src={det?.icon} alt="pros" width={36} height={36} />
+                                    <div className="flex-1">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <h2 className="font-semibold text-lg">{det?.title}</h2>
+                                            {det?.cons && (
+                                                <span className="bg-[#FFDCD4] rounded-full text-sm px-2 py-1 text-[#FF4C51] font-medium">
+                                                    {det?.cons}
+                                                </span>
+                                            )}
                                         </div>
-                                        <div className='flex-1 flex-col'>
-                                            <div className='flex flex-row items-center gap-2 justify-start mb-2'>
-                                                <div>
-                                                    <h2 className='font-semibold text-lg'>{det?.title}</h2>
-                                                </div>
-                                                {det?.cons && <div className='bg-[#FFDCD4] rounded-full text-sm px-2 py-1 text-[#FF4C51] font-medium'> {det?.cons}</div>}
-                                            </div>
-                                            <div className='font-[400] text-lg'>
-                                                <p>{det?.subText}</p>
-                                            </div>
-                                        </div>
+                                        <p className="text-gray-700 text-base">{det?.subText}</p>
                                     </div>
-                                ))
-                            }
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
             </div>
 
-            {/* Footer button  */}
-            <div className='flex items-center justify-center my-5 relative'>
-                <button type="button" className='bg-[#B3FC6A] text-lg font-semibold p-3 flex  items-center justify-center text-nowrap rounded-xl w-[296px] h-[60px] shadow-lg'>
+            {/* Footer button */}
+            <div className="flex flex-col items-center justify-center my-10 relative">
+                <button
+                    type="button"
+                    className="bg-[#B3FC6A] text-lg font-semibold px-6 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
                     Start Using LeadCRM Now
                 </button>
 
-                <div className='hidden md:block absolute -bottom-9 -right-[280px]'>
-                    <img src={SaveTextIcon} alt="Save 40+ hours every Month" title='Save 40+ hours every Month' />
+                <div className="hidden md:block absolute -bottom-10 -right-[280px]">
+                    <img
+                        src={SaveTextIcon}
+                        alt="Save 40+ hours every Month"
+                        title="Save 40+ hours every Month"
+                    />
                 </div>
             </div>
         </div>
+
     )
 }
 

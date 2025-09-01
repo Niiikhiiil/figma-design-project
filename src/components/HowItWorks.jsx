@@ -47,7 +47,7 @@ const HowItWorks = () => {
                 alt="Background"
                 className="absolute inset-0 w-full h-full object-cover"
             />
-            <div className="relative z-10   flex items-center py-5">
+            <div className="relative z-10 flex items-center py-5">
                 <div className='flex items-center justify-center w-full basis-auto max-w-[1300px] mx-auto my-0 py-5 flex-col'>
                     <div className="w-full flex items-center md:items-start gap-3 flex-col mt-5 lg:mt-10">
                         <div className='flex items-center'>
@@ -73,7 +73,7 @@ const HowItWorks = () => {
                                     </div>
 
                                     {index !== 3 &&
-                                        <img src={FromToArrowIcon} alt="Arrow" className='flex absolute top-[6rem] -right-[6rem] -z-20 hover:-z-20 group-hover:-z-20 group-hover:invisible hover:invisible' />
+                                        <img src={FromToArrowIcon} alt="Arrow" className='hidden lg:flex absolute top-[6rem] -right-[6rem] -z-20 hover:-z-20 group-hover:-z-20 group-hover:invisible hover:invisible' />
                                     }
 
 

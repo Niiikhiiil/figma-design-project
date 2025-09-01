@@ -28,7 +28,7 @@ const Hero = () => {
 
                             <span className='block font-semibold text-2xl md:text-6xl '>
                                 Capture, Sync and Enrich in&nbsp;
-                                <span className='text-[#2d96bd] relative'>
+                                <span className='text-[#2d96bd] relative text-nowrap'>
                                     Both Ways
                                     <span className="bg-[#fbde6a] h-5 absolute -bottom-5 left-1 w-full [clip-path:polygon(0_0,100%_0,0_100%)] " />
 

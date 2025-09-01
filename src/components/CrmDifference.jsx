@@ -167,7 +167,7 @@ const CrmDifference = () => {
                     Start Using LeadCRM Now
                 </button>
 
-                <div className='sm:hidden md:block absolute -bottom-9 -right-[280px]'>
+                <div className='hidden md:block absolute -bottom-9 -right-[280px]'>
                     <img src={SaveTextIcon} alt="Save 40+ hours every Month" title='Save 40+ hours every Month' />
                 </div>
             </div>

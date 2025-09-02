@@ -1,30 +1,34 @@
 import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
-import InfiniteHoriontalScrollbar from './components/InfiniteHoriontalScrollbar'
-import CrmDifference from './components/CrmDifference'
+import CountinousBar from './components/CountinousBar'
+import WhyLeadCRM from './components/WhyLeadCRM'
 import HowItWorks from './components/HowItWorks'
 import Review from './components/Review'
 import SalesSolution from './components/SalesSolution'
 import SupportedLeadCRM from './components/SupportedLeadCRM'
-import JoinProffesional from './components/JoinProffesional'
+import ProfessionalsBanner from './components/ProfessionalsBanner'
 import Faq from './components/Faq'
 import Footer from './components/Footer'
+import FloatingPopup from './components/FloatingPopup'
+import FixedPopUp from './components/FixedPopUp'
 
 const App = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <InfiniteHoriontalScrollbar />
-      <CrmDifference />
+      <CountinousBar />
+      <WhyLeadCRM />
       <HowItWorks />
       <Review />
       <SalesSolution />
       <SupportedLeadCRM />
-      <JoinProffesional />
+      <ProfessionalsBanner />
       <Faq />
       <Footer />
+      <FloatingPopup />
+      {/* <FixedPopUp /> */}
     </div>
   )
 }

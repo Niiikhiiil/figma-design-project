@@ -2,34 +2,23 @@ import React from 'react'
 import ArrowIcon from "../assets/arrow.svg";
 import BallIcon from "../assets/ball.svg"
 import SingleStarIcon from "../assets/singleStar.svg"
-
-const ReviewData = [
-    {
-        name: "David Fincher",
-        location: "On Capterra",
-        text: "Reliable Data Sync I`ve only had to refresh the extension a couple of times. The multi-contact enrichment is still a huge plus, and support is very responsive."
-    },
-    {
-        name: "Lillian Williams",
-        location: "On Capterra",
-        text: "My experience with LeadCRM has been excellent. It has streamlined my workflow, improved lead tracking, and made follow-ups more efficient. The responsive customer support is a big plus. Highly recommend it for reliable lead management!"
-    },
-    {
-        name: "David Fincher",
-        location: "On Capterra",
-        text: "Reliable Data Sync I`ve only had to refresh the extension a couple of times. The multi-contact enrichment is still a huge plus, and support is very responsive."
-    },
-]
+import { ReviewData } from '../utils/data';
 
 const Review = () => {
     return (
-        <section className="relative z-10 flex items-center py-5 mb-[6rem]" >
+        <section className="relative z-10 flex items-center py-2 md:py-5 mb-0 md:mb-[6rem] md:px-4" id='review'>
+
+            {/* Top Right Ball  */}
             <img src={BallIcon} alt="Ball" className='absolute hidden lg:block lg:-top-[35px] lg:right-1' />
+
             <div className='flex items-center justify-center w-full basis-auto max-w-[1300px] mx-auto my-0 py-5 flex-col'>
                 <div className="w-full flex items-center md:items-start gap-3 flex-col mt-5 lg:mt-10">
+                    {/* Header  */}
                     <div className='flex items-center mb-5'>
-                        <h1 className='font-semibold text-2xl md:text-3xl lg:text-4xl leading-snug text-[#090F4E]'>What people are saying about LeadCRM</h1>
+                        <h1 className='font-semibold text-2xl lg:text-4xl leading-snug text-[#090F4E] text-center md:text-center lg:text-start'>What people are saying about LeadCRM</h1>
                     </div>
+
+                    {/* Review Data mapped  */}
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-4 lg:p-0'>
                         {
                             ReviewData?.map((rev, index) => (
